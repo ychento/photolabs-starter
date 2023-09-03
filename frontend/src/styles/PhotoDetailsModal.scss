@@ -34,6 +34,13 @@
   border-radius: 8px;
 }
 
+.photo-details-modal__image-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .photo-details-modal__top-bar {
   display: flex;
   flex-direction: row;
