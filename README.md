@@ -26,3 +26,8 @@ npm start
 
 ![Landing Page](docs/landing%20page.png)
 
+![Favourite Photo](docs/favourite%20photo.png)
+
+![Modal](docs/modal.png)
+
+
