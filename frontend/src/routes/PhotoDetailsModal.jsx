@@ -12,8 +12,9 @@ const PhotoDetailsModal = ({
   isFavourite,
   favouritePhotos,
 }) => {
-  const similarPhotos = Object.keys(modalPhoto.similarPhotos).map((photo) => {
-    return modalPhoto.similarPhotos[photo];
+  console.log("++++", modalPhoto);
+  const similarPhotos = Object.keys(modalPhoto.similar_photos).map((photo) => {
+    return modalPhoto.similar_photos[photo];
   });
 
   return (

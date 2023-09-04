@@ -18,7 +18,7 @@ const PhotoList = ({ favouritePhotos = [], toggleFavourite, openModal, photos })
           profile={photoData.user.profile}
           toggleFavourite={toggleFavourite}
           isFavourite={favouritePhotos.includes(photoData.id)}
-          onClick={() => openModal(photoData.id)}
+          onClick={() => openModal(photoData)}
         />
       ))}
     </ul>
