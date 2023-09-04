@@ -24,4 +24,5 @@ npm start
 ```
 ## Screenshots of the project
 
-!["Landing Page] docs/landing page.png 
+![Landing Page](docs/landing%20page.png)
+
