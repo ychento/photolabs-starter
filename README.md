@@ -22,3 +22,12 @@ Read `backend/readme` for further setup details.
 cd backend
 npm start
 ```
+## Screenshots of the project
+
+![Landing Page](docs/landing%20page.png)
+
+![Favourite Photo](docs/favourite%20photo.png)
+
+![Modal](docs/modal.png)
+
+
