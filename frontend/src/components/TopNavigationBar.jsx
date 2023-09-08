@@ -6,12 +6,12 @@ import FavIcon from './FavIcon';
 
 
 
-const TopNavigation = ({ hasFavouritePhotos }) => {
+const TopNavigation = ({ hasFavouritePhotos, topics, onTopicSelect }) => {
 
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList />
+      <TopicList topics={topics} onTopicSelect={onTopicSelect} />
       <FavIcon selected={hasFavouritePhotos}/>
     </div>
   );

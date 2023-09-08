@@ -45,9 +45,8 @@ const reducer = (state, action) => {
         isModalOpen: true,
         modalPhoto: action.photo,
       };
-    default:
-      return state;
-    case actionTypes.SET_PHOTO_DATA:
+
+    case actionTypes.SET_PHOTOS_DATA:
       return {
         ...state,
         photoData: action.payload,
@@ -57,6 +56,8 @@ const reducer = (state, action) => {
         ...state,
         topicData: action.payload,
       };
+    default:
+      return state;
   }
 };
 
@@ -67,7 +68,7 @@ const useApplicationData = () => {
     fetch("/api/photos")
       .then((response) => response.json())
       .then((data) =>
-        dispatch({ type: actionTypes.SET_PHOTO_DATA, payload: data })
+        dispatch({ type: actionTypes.SET_PHOTOS_DATA, payload: data })
       )
       .catch((error) => {
         console.error("Error fetching photos data:", error);
@@ -75,7 +76,7 @@ const useApplicationData = () => {
 
     fetch("/api/topics")
       .then((response) => response.json())
-      .then((data) =>
+      .then((data) => 
         dispatch({ type: actionTypes.SET_TOPIC_DATA, payload: data })
       )
       .catch((error) => {
@@ -95,11 +96,20 @@ const useApplicationData = () => {
     dispatch({ type: actionTypes.SET_PHOTO_SELECTED, photo });
   };
 
+  const onTopicSelect = (id) => {
+    fetch(`/api/topics/photos/${id}`)
+      .then((response) => response.json())
+      .then((data) =>
+        dispatch({ type: actionTypes.SET_PHOTOS_DATA, payload: data })
+      );
+  };
+
   return {
     state,
     onClosePhotoDetailsModal,
     updateToFavPhotoIds,
     setPhotoSelected,
+    onTopicSelect,
   };
 };
 

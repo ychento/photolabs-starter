@@ -3,7 +3,6 @@ import TopNavigation from "./TopNavigationBar";
 import "../styles/HomeRoute.scss";
 import PhotoList from "./PhotoList";
 import TopicList from "./TopicList";
-import photos from "mocks/photos";
 
 const HomeRoute = ({
   openModal,
@@ -11,11 +10,16 @@ const HomeRoute = ({
   photos,
   favouritePhotos,
   toggleFavourite,
+  onTopicSelect,
 }) => {
   return (
     <div className="home-route">
       <div className="top-nav-bar">
-        <TopNavigation hasFavouritePhotos={favouritePhotos.length > 0} />
+        <TopNavigation
+          hasFavouritePhotos={favouritePhotos.length > 0}
+          topics={topics}
+          onTopicSelect={onTopicSelect}
+        />
       </div>
 
       <div className="photo-list">
